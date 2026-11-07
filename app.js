@@ -14,7 +14,7 @@ function clickMathSymbol(buttons){
     if(txtValue == ""){
         return;
     } 
-    if(txtValue.includes("+")|| txtValue.includes("-")|| txtValue.includes("*")|| txtValue.includes("÷")){
+    if(txtValue.slice(-1)=="+"  || txtValue.slice(-1)=="-" || txtValue.slice(-1)=="*" || txtValue.slice(-1)=="÷"){
         return;
 
     }
