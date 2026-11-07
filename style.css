@@ -64,12 +64,12 @@ body {
     cursor: pointer;
 }
 
-/*.number {
+.number {
     background: #dbe2ef;
     color: #192339;
 }
 
-.mathsymbol {
+/*.mathsymbol {
     background: #f0a500;
     color: white;
 }
