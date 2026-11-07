@@ -7,4 +7,22 @@ function clickNumbers(buttons){
     document.getElementById("expression").value = number;
 }
 
+function clickMathSymbol(buttons){
+    let mathSymbol = document.getElementById("expression").value;
 
+    if(buttons.value == "+"){
+        mathSymbol = mathSymbol + "+";
+        //mathSymbol+="+";
+
+    }else if(buttons.value =="-"){
+        mathSymbol =  mathSymbol + "-";
+
+    }else if(buttons.value =="*"){
+        mathSymbol = mathSymbol + "*";
+
+    }else if(buttons.value =="÷"){
+        mathSymbol = mathSymbol + "÷";
+    }
+    document.getElementById("expression").value = mathSymbol;
+
+}
