@@ -2,6 +2,7 @@ let calculatorHistory = [];
 
 function clickNumbers(buttons){
     let number = document.getElementById("expression").value;
+    
     number += buttons.value;
 
     document.getElementById("expression").value = number;
@@ -9,6 +10,14 @@ function clickNumbers(buttons){
 
 function clickMathSymbol(buttons){
     let txtValue = document.getElementById("expression").value;
+
+    if(txtValue == ""){
+        return;
+    } 
+    if(txtValue.includes("+")|| txtValue.includes("-")|| txtValue.includes("*")|| txtValue.includes("÷")){
+        return;
+
+    }
 
     if(buttons.value == "+"){
         txtValue = txtValue + "+";

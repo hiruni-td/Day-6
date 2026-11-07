@@ -17,9 +17,9 @@
             <h1>Calculator</h1>
             <div class="calculator-screen" id="txtarea">
 
-                <input type="text" id="expression" placeholder="Expression" size="20">
+                <input type="text" id="expression" placeholder="Expression" size="20" readonly>
                 <br>
-                <input type="text" id="answer" placeholder="Answer" size="20">
+                <input type="text" id="answer" placeholder="Answer" size="20" readonly>
 
             </div>
             <br>
@@ -56,22 +56,19 @@
 
                 <input class="number" type="button" value="0" onclick="clickNumbers(this)">
                 <input class="number" type="button" value="." onclick="clickNumbers(this)">
-                <input class="number" type="button" value="," onclick="clickNumbers(this)">
+                <input class="number" type="button" value="00" onclick="clickNumbers(this)">
                 <input class="equal" type="button" value="=" onclick="clickHandleCalculator()">
                 
             </div>
         </div>
 
-        <div id="lbltxt"></div>
-        <div id="calculation history"></div>
-    
-    </div>
+       </div>
 
-    <div class="calculator wrapper">
+    <div class="calculator-wrapper">
         <div class="getCalculationHistory">
 
             <h1>Calculation History</h1>
-            <ul><textarea name="calculation history" id="calculatorHistory" cols="30" rows="18" readonly></textarea></ul>
+            <textarea name="calculationHistory" id="calculatorHistory" cols="30" rows="18" readonly></textarea>
 
         </div>
 
