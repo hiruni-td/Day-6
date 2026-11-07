@@ -67,11 +67,21 @@ function clickHandleCalculator(){
     }else if(txtValue.includes("*")){
         mathsymbol  = "*";
 
-    }else if(txtValue.includes("/")){
-        mathsymbol = "/";
+    }else if(txtValue.includes("÷")){
+        mathsymbol = "÷";
+
+    }
+    if(mathsymbol == ""){
+        return;
 
     }
     let numbers = txtValue.split(mathsymbol);
+
+    if(numbers.length !=2 || numbers[0]==""|| numbers[1]==""){
+        document.getElementById("answer").value = "Invalid Input";
+        return;
+
+    }
 
     let num1 = Number(numbers[0]);
     let num2 = Number(numbers[1]);
@@ -84,8 +94,14 @@ function clickHandleCalculator(){
         answer =  num1 - num2;
     }else if(mathsymbol == "*"){
         answer = num1 * num2;
-    }else if(mathsymbol == "/"){
-        answer = num1 / num2;
+    }else if(mathsymbol == "÷"){
+        
+        if(num2 ==  0){
+            document.getElementById("answer").value ="Cannot divide by zero";
+            return;
+        }
+        answer= num1/num2;
+
     }
 
     document.getElementById("answer").value = answer;
