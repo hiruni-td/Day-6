@@ -1,0 +1,109 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #192339;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    min-height: 100vh;
+    padding: 30px;
+    margin: 0;
+}
+
+.calculator-wrapper {
+    width: 350px;
+    max-width: 100%;
+    background: #061125;
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.calculator h1,
+.getCalculationHistory h1 {
+    text-align: center;
+    font-size: 24px;
+}
+
+.calculator-screen {
+    background: #647086;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+#expression {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #dbe2ef;
+    font-size: 18px;
+    text-align: right;
+    outline: none;
+}
+
+#answer {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: right;
+    outline: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.buttons input {
+    height: 55px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.number {
+    background: #dbe2ef;
+    color: #192339;
+}
+
+.mathsymbol {
+    background: #f0a500;
+    color: white;
+}
+
+.features {
+    background: #647086;
+    color: white;
+}
+
+.equal {
+    background: #16a085;
+    color: white;
+}
+
+.buttons input:hover {
+    opacity: 0.8;
+}
+
+#calculatorHistory {
+    width: 100%;
+    height: 300px;
+    box-sizing: border-box;
+    background: #647086;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+}
