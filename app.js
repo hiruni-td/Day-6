@@ -42,6 +42,14 @@ function clickFeatures(buttons){
         document.getElementById("expression").value ="";
         document.getElementById("answer").value ="";
 
+    }else if(buttons.value == "⌫"){
+        let txtValue = document.getElementById("expression").value;
+
+        txtValue = txtValue.slice(0,-1);
+
+        document.getElementById("expression").value = txtValue;
+        document.getElementById("answer").value = "";
+
     }
 
 }
