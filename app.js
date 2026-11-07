@@ -37,4 +37,44 @@ function clickFeatures(buttons){
 
 }
 
-function 
+function clickHandleCalculator(){
+    let txtValue = document.getElementById("expression").value;
+    let mathsymbol = "";
+
+    if(txtValue.includes("+")){
+        mathsymbol = "+";
+
+    }else if(txtValue.includes("-")){
+        mathsymbol = "-";
+
+    }else if(txtValue.includes("*")){
+        mathsymbol  = "*";
+
+    }else if(txtValue.includes("/")){
+        mathsymbol = "/";
+
+    }
+    let numbers = txtValue.split(mathsymbol);
+
+    let num1 = Number(numbers[0]);
+    let num2 = Number(numbers[1]);
+
+    let answer = 0;
+
+    if(mathsymbol == "+"){
+        answer = num1 + num2;
+    }else if(mathsymbol == "-"){
+        answer =  num1 - num2;
+    }else if(mathsymbol == "*"){
+        answer = num1 * num2;
+    }else if(mathsymbol == "/"){
+        answer = num1 / num2;
+    }
+
+    document.getElementById("answer").value = answer;
+    
+    let history = txtValue + " = " + answer;
+
+    calculatorHistory.push(history);
+
+}
