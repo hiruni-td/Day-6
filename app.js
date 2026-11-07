@@ -84,3 +84,12 @@ function clickFeaturesHistory(){
 
 }
 
+function loadData(){
+    document.getElementById("calculatorHistory").innerHTML = "";
+    for(let data of calculatorHistory){
+        document.getElementById("calculatorHistory").innerHTML += data + "\n";
+
+    }
+
+}
+
