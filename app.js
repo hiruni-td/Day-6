@@ -55,61 +55,68 @@ function clickFeatures(buttons){
 }
 
 function clickHandleCalculator(){
+
     let txtValue = document.getElementById("expression").value;
-    let mathsymbol = "";
 
-    if(txtValue.includes("+")){
-        mathsymbol = "+";
-
-    }else if(txtValue.includes("-")){
-        mathsymbol = "-";
-
-    }else if(txtValue.includes("*")){
-        mathsymbol  = "*";
-
-    }else if(txtValue.includes("÷")){
-        mathsymbol = "÷";
-
-    }
-    if(mathsymbol == ""){
+    if(txtValue == ""){
         return;
-
-    }
-    let numbers = txtValue.split(mathsymbol);
-
-    if(numbers.length !=2 || numbers[0]==""|| numbers[1]==""){
-        document.getElementById("answer").value = "Invalid Input";
-        return;
-
     }
 
-    let num1 = Number(numbers[0]);
-    let num2 = Number(numbers[1]);
+    let numbers = [];
+    let operators = [];
+    let currentNumber = "";
 
-    let answer = 0;
+    for(let i = 0; i < txtValue.length; i++){
 
-    if(mathsymbol == "+"){
-        answer = num1 + num2;
-    }else if(mathsymbol == "-"){
-        answer =  num1 - num2;
-    }else if(mathsymbol == "*"){
-        answer = num1 * num2;
-    }else if(mathsymbol == "÷"){
-        
-        if(num2 ==  0){
-            document.getElementById("answer").value ="Cannot divide by zero";
-            return;
+        if(txtValue[i] == "+" || txtValue[i] == "-" || txtValue[i] == "*" || txtValue[i] == "÷"){
+
+            numbers.push(Number(currentNumber));
+            operators.push(txtValue[i]);
+            currentNumber = "";
+
+        }else{
+            currentNumber += txtValue[i];
         }
-        answer= num1/num2;
-
     }
 
+    numbers.push(Number(currentNumber));
+
+    let newNumbers = [];
+    let newOperators = [];
+
+    newNumbers.push(numbers[0]);
+
+    for(let i = 0; i < operators.length; i++){
+
+        if(operators[i] == "*"){
+            newNumbers[newNumbers.length - 1] *= numbers[i + 1];
+
+        }else if(operators[i] == "÷"){
+
+            if(numbers[i + 1] == 0){
+                document.getElementById("answer").value = "Cannot divide by zero";
+                return;
+            }
+            newNumbers[newNumbers.length - 1] /= numbers[i + 1];
+
+        }else{
+            newOperators.push(operators[i]);
+            newNumbers.push(numbers[i + 1]);
+        }
+    }
+    let answer = newNumbers[0];
+
+    for(let i = 0; i < newOperators.length; i++){
+
+        if(newOperators[i] == "+"){
+            answer += newNumbers[i + 1];
+
+        }else if(newOperators[i] == "-"){
+            answer -= newNumbers[i + 1];
+        }
+    }
     document.getElementById("answer").value = answer;
-    
-    let history = txtValue + " = " + answer;
-
-    calculatorHistory.push(history);
-
+    calculatorHistory.push(txtValue + " = " + answer);
 }
 
 function clickFeaturesHistory(){
