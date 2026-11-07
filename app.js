@@ -8,21 +8,31 @@ function clickNumbers(buttons){
 }
 
 function clickMathSymbol(buttons){
-    let mathSymbol = document.getElementById("expression").value;
+    let txtValue = document.getElementById("expression").value;
 
     if(buttons.value == "+"){
-        mathSymbol = mathSymbol + "+";
-        //mathSymbol+="+";
+        txtValue = txtValue + "+";
+        //txtValue+="+";
 
     }else if(buttons.value =="-"){
-        mathSymbol =  mathSymbol + "-";
+        txtValue =  txtValue + "-";
 
     }else if(buttons.value =="*"){
-        mathSymbol = mathSymbol + "*";
+        txtValue = txtValue + "*";
 
     }else if(buttons.value =="÷"){
-        mathSymbol = mathSymbol + "÷";
+        txtValue = txtValue + "÷";
     }
-    document.getElementById("expression").value = mathSymbol;
+    document.getElementById("expression").value = txtValue;
+
+}
+
+function clickFeatures(buttons){
+    if(buttons.value  == "C"){
+
+        document.getElementById("expression").value ="";
+        document.getElementById("answer").value ="";
+
+    }
 
 }
