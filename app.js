@@ -118,9 +118,9 @@ function clickFeaturesHistory(){
 }
 
 function loadData(){
-    document.getElementById("calculatorHistory").innerHTML = "";
+    document.getElementById("calculatorHistory").value = "";
     for(let data of calculatorHistory){
-        document.getElementById("calculatorHistory").innerHTML += data + "\n";
+        document.getElementById("calculatorHistory").value += data + "\n";
 
     }
 
