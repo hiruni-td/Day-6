@@ -49,13 +49,13 @@ body {
     outline: none;
 }
 
-/*.buttons {
+.buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
-.buttons input {
+/*.buttons input {
     height: 55px;
     border: none;
     border-radius: 10px;
