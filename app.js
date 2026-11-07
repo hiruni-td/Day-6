@@ -78,3 +78,9 @@ function clickHandleCalculator(){
     calculatorHistory.push(history);
 
 }
+
+function clickFeaturesHistory(){
+    loadData();
+
+}
+
